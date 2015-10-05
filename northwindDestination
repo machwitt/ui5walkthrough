@@ -1,0 +1,8 @@
+#
+#Mon Oct 05 12:33:11 UTC 2015
+Name=northwind
+URL=http\://services.odata.org/
+ProxyType=Internet
+Type=HTTP
+CloudConnectorVersion=2
+Authentication=NoAuthentication
