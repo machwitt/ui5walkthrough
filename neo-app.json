@@ -1,0 +1,12 @@
+{
+	"routes": [
+		{
+			"path": "/northwind",
+			"target": {
+				"type": "destination",
+				"name": "northwind"
+			},
+			"description": "Northwind"
+		}
+	]
+}
