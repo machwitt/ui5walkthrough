@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/model/json/JSONModel",
-	"sap/ui/demo/wt/controller/HelloDialog"
-], function (UIComponent, JSONModel, HelloDialog) {
+	"sap/ui/demo/wt/controller/HelloDialog",
+	"sap/ui/model/odata/v2/ODataModel"
+], function (UIComponent, JSONModel, HelloDialog, ODataModel) {
 	"use strict";
 
 	return UIComponent.extend("sap.ui.demo.wt.Component", {
@@ -25,10 +26,10 @@ sap.ui.define([
 			var oModel = new JSONModel(oData);
 			this.setModel(oModel);
 
-			// set invoice model - local
+			// set invoice model - remote
 			var oConfig = this.getMetadata().getConfig();
-			var sNamespace = this.getMetadata().getManifestEntry("sap.app").id;
-			var oInvoiceModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, oConfig.invoiceLocal));
+			var oInvoiceModel = new ODataModel(oConfig.invoiceRemote);
+			oInvoiceModel.setUseBatch(false);
 			this.setModel(oInvoiceModel, "invoice");
 
 			// set dialog
