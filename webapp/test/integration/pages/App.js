@@ -17,7 +17,7 @@ sap.ui.require([
 							},
 							errorMessage: "Did not find the helloDialogButton button on the app page"
 						});
-				}
+					}
 				},
 				assertions: {
 					iShouldSeeTheHelloDialog: function () {
@@ -30,7 +30,7 @@ sap.ui.require([
 							errorMessage: "Did not find the dialog control"
 						});
 					}
+				}
 			}
-			}
-	});
+		});
 	});

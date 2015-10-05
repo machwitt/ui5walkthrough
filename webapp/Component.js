@@ -30,6 +30,16 @@ sap.ui.define([
 
 			// set dialog
 			this.helloDialog = new HelloDialog();
+
+			// open support window (only for demonstration purpose)
+			if (sap.ui.Device.system.desktop) {
+				setTimeout(function () {
+					jQuery.sap.log.info("opening support window");
+					jQuery.sap.require("sap.ui.core.support.Support");
+					var oSupport = sap.ui.core.support.Support.getStub("APPLICATION");
+					oSupport.openSupportTool();
+				}, 3000);
+			}
 		}
 	});
 
