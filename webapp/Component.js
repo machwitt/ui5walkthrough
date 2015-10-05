@@ -1,36 +1,32 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/model/json/JSONModel",
-	"sap/ui/demo/wt/controller/HelloDialog",
-	"sap/ui/model/odata/v2/ODataModel"
-], function (UIComponent, JSONModel, HelloDialog, ODataModel) {
+	"sap/ui/demo/wt/controller/HelloDialog"
+], function (UIComponent, JSONModel, HelloDialog) {
 	"use strict";
 
 	return UIComponent.extend("sap.ui.demo.wt.Component", {
 
-		metadata : {
+		metadata: {
 			manifest: "json"
 		},
 
-		init : function () {
+		init: function () {
 
 			// call the init function of the parent
 			UIComponent.prototype.init.apply(this, arguments);
 
 			// set data model
 			var oData = {
-				recipient : {
-					name : "World"
+				recipient: {
+					name: "World"
 				}
 			};
 			var oModel = new JSONModel(oData);
 			this.setModel(oModel);
 
-			// set invoice model - remote
-			var oConfig = this.getMetadata().getConfig();
-			var oInvoiceModel = new ODataModel(oConfig.invoiceRemote);
-			oInvoiceModel.setUseBatch(false);
-			this.setModel(oInvoiceModel, "invoice");
+			// disable batch grouping for v2 API of the northwind service
+			this.getModel("invoice").setUseBatch(false);
 
 			// set dialog
 			this.helloDialog = new HelloDialog();
