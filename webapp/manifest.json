@@ -4,9 +4,11 @@
 	"_version": "1.1.0",
 	"id": "sap.ui.demo.wt",
 	"type": "application",
+
 	"i18n": "i18n/i18n.properties",
 	"title": "{{appTitle}}",
 	"description": "{{appDescription}}",
+
 	"applicationVersion": {
 	  "version": "1.0.0"
 	},
@@ -27,13 +29,13 @@
   "sap.ui5": {
 	"_version": "1.1.0",
 	"rootView": "sap.ui.demo.wt.view.App",
+
 	"dependencies": {
 	  "minUI5Version": "1.30",
 	  "libs": {
 		"sap.m": {}
 	  }
 	},
-
 	"config": {
 	  "invoiceLocal": "/Invoices.json"
 	},

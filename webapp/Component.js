@@ -28,7 +28,6 @@ sap.ui.define([
 			// set invoice model - local
 			var oConfig = this.getMetadata().getConfig();
 			var sNamespace = this.getMetadata().getManifestEntry("sap.app").id;
-
 			var oInvoiceModel = new JSONModel(jQuery.sap.getModulePath(sNamespace, oConfig.invoiceLocal));
 			this.setModel(oInvoiceModel, "invoice");
 
